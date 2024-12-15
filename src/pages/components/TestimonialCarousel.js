@@ -1,76 +1,48 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
 const TestimonialCarousel = () => {
   const testimonials = [
     {
-      name: 'BerryMuffin150',
+      name: "BerryMuffin150",
       review:
-        'I am very happy with the theme, particularly with customizability, because it has many options and looks and you can create new ones as well.',
-      attribute: 'Customizability',
-      img: '/img/envato.png',
+        "אני מאוד מרוצה מהתבנית, במיוחד מהיכולת להתאים אותה אישית, כי יש לה המון אפשרויות והיא נראית נהדר. ניתן גם ליצור עיצובים חדשים.",
+      attribute: "התאמה אישית",
+      img: "/img/envato.png",
     },
     {
-      name: 'korin_fr',
+      name: "korin_fr",
       review:
-        "Awesome template ! One of the best I've worked with... beautiful and easy to customize. Elementor is a must. Great job!!",
-      attribute: 'Design Quality',
-      img: '/img/envato.png',
+        "תבנית מדהימה! אחת הטובות שעבדתי איתן... יפה וקלה להתאמה אישית. Elementor הוא חובה. עבודה מעולה!",
+      attribute: "איכות העיצוב",
+      img: "/img/envato.png",
     },
     {
-      name: 'NellLC29',
+      name: "NellLC29",
       review:
-        "The customer support is perfect, same for the theme. You won't be disappointed! Le service client est parfait, le thème aussi. Vous pouvez l'acheter les yeux fermés !",
-      attribute: 'Customer Support',
-      img: '/img/envato.png',
+        "שירות הלקוחות מושלם, כמו גם התבנית. לא תתאכזבו! Le service client est parfait, le thème aussi. Vous pouvez l'acheter les yeux fermés !",
+      attribute: "שירות לקוחות",
+      img: "/img/envato.png",
     },
     {
-      name: 'mpgmateus',
+      name: "mpgmateus",
       review:
-        'The theme is wonderful! I loved it!!! The support is UNREAL! You ROCK! Thank you very much for supporting like this! :))',
-      attribute: 'Customer Support',
-      img: '/img/envato.png',
+        "התבנית נהדרת! אני מאוהב בה!!! התמיכה היא לא מהעולם הזה! אתם מדהימים! תודה רבה על תמיכה כזו! :))",
+      attribute: "שירות לקוחות",
+      img: "/img/envato.png",
     },
-    {
-        name: 'BerryMuffin150',
-        review:
-          'I am very happy with the theme, particularly with customizability, because it has many options and looks and you can create new ones as well.',
-        attribute: 'Customizability',
-        img: '/img/envato.png',
-      },
-      {
-        name: 'korin_fr',
-        review:
-          "Awesome template ! One of the best I've worked with... beautiful and easy to customize. Elementor is a must. Great job!!",
-        attribute: 'Design Quality',
-        img: '/img/envato.png',
-      },
-      {
-        name: 'NellLC29',
-        review:
-          "The customer support is perfect, same for the theme. You won't be disappointed! Le service client est parfait, le thème aussi. Vous pouvez l'acheter les yeux fermés !",
-        attribute: 'Customer Support',
-        img: '/img/envato.png',
-      },
-      {
-        name: 'mpgmateus',
-        review:
-          'The theme is wonderful! I loved it!!! The support is UNREAL! You ROCK! Thank you very much for supporting like this! :))',
-        attribute: 'Customer Support',
-        img: '/img/envato.png',
-      },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-semibold text-gray-800">
-            Real people, real stories. Hear from <br />
-            our community.
+            אנשים אמיתיים, סיפורים אמיתיים. <br />
+            תשמעו מהקהילה שלנו.
           </h2>
         </div>
         <Swiper
@@ -79,7 +51,7 @@ const TestimonialCarousel = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          initialSlide={Math.floor(testimonials.length / 2)} 
+          initialSlide={Math.floor(testimonials.length / 2)}
           coverflowEffect={{
             rotate: 60,
             stretch: 0,
@@ -98,7 +70,7 @@ const TestimonialCarousel = () => {
               <div className="flex flex-col items-center text-center">
                 <img
                   src="/img/quotes.png"
-                  alt="Quotes"
+                  alt="ציטוט"
                   className="w-10 h-10 mb-4"
                 />
                 <div className="mb-4">
@@ -113,18 +85,13 @@ const TestimonialCarousel = () => {
                   <p className="text-gray-600">{testimonial.review}</p>
                 </div>
                 <div className="flex items-center mt-4">
-                  <img
-                    src={testimonial.img}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div className="ml-4 text-left">
+                  <div className="mr-4 text-right">
                     <h6 className="text-lg font-medium text-gray-700">
                       {testimonial.name}
                     </h6>
                     <span className="text-sm text-gray-500">
-                      For{' '}
-                      <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+                      על{" "}
+                      <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
                         {testimonial.attribute}
                       </span>
                     </span>

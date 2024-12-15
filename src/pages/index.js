@@ -1,34 +1,25 @@
+import { useState } from "react";
 import Image from "next/image";
 import AverageRisksSection from "./components/AverageRisksSection";
 import VisionMissionSection from "./components/VisionMissionSection";
 import ConnectSection from "./components/ConnectSection";
-//import TestimonialSlider from "./components/TestimonialSlider";
 import TestimonialCarousel from "./components/TestimonialCarousel";
-// import Recognitions from "./components/Recognitions";
 import Footer from "./components/Footer";
 import SecurityThreats from "./components/SecurityThreats";
 import Business from "./components/RegisterPlugin";
-// import AdvantagesSection from "./components/AdvantagesSection";
 import HeaderSection from "./components/HeaderSection";
 import PreventRisk from "./components/PreventRisk";
 import Preloader from "./components/Preloader";
 import SpiralAnim from "./components/SpiralAnim";
-// import { useEffect } from "react";
-// import { gsap } from "gsap";
-// import SpiralAnim from "./components/SpiralAnim";
-// import Demo from "./components/Demo";
+
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     ".animate-from-top",
-  //     { y: -50, opacity: 0 },
-  //     { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power2.out" }
-  //   );
-  // }, []);
+  // State for mobile menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <Preloader />
-      <header className="bg-gray-50 ">
+      <header className="bg-gray-50">
         {/* Navbar */}
         <nav
           dir="rtl"
@@ -43,7 +34,11 @@ export default function Home() {
               height={40}
             />
           </div>
-          <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
+          <div
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-gray-700 font-medium absolute md:static top-full left-0 w-full md:w-auto bg-white p-4 md:p-0 shadow md:shadow-none`}
+          >
             <a href="#platform" className="hover:text-orange-600">
               פלטפורמה
             </a>
@@ -56,14 +51,14 @@ export default function Home() {
             <a href="#company" className="hover:text-orange-600">
               החברה
             </a>
+            <button className="bg-gradient-to-r from-teal-500 via-indigo-500 to-blue-500 md:hidden bg-orange-500 text-white px-4 py-2 rounded-md shadow hover:bg-orange-600">
+              בקשת הדגמה
+            </button>
           </div>
-          <button className="bg-gradient-to-r from-teal-500 via-indigo-500 to-blue-500 hidden md:block bg-orange-500 text-white px-4 py-2 rounded-md shadow hover:bg-orange-600">
-            בקשת הדגמה
-          </button>
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700 focus:outline-none focus:ring"
             aria-label="Toggle navigation menu"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
               className="h-6 w-6"
@@ -87,7 +82,6 @@ export default function Home() {
         <VisionMissionSection />
         <SpiralAnim />
         <ConnectSection />
-        {/* <Demo /> */}
         <SecurityThreats />
         <Business />
         <TestimonialCarousel />

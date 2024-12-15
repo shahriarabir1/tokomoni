@@ -106,7 +106,7 @@ const SpiralAnim = () => {
   return (
     <div
       ref={wrapperRef}
-      className="w-full h-screen  bg-cover bg-center text-black font-bold relative mx-auto mb-0"
+      className="hidden md:block w-full h-screen  bg-cover bg-center text-black font-bold relative mx-auto mb-0"
     >
       <div className="top-0 right-16 h-full w-full absolute z-40">
         <svg
