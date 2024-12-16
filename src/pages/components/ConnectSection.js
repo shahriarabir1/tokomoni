@@ -4,7 +4,7 @@ import React from "react";
 
 const ConnectSection = () => {
   return (
-    <div className="flex justify-between w-10/12 gap-20 relative pl-10">
+    <div className="flex justify-between w-10/12 gap-20 relative pl-10 -mt-12">
       {/* Sidebar content */}
 
       <section className="bg-gray-50 py-16 w-4/5">

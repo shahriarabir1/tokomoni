@@ -143,7 +143,7 @@ const SpiralAnim = () => {
        q 0 100 100 100 
        h 1090
        q 100 0 100 100
-       v 250"
+       v 950"
             strokeWidth="65" // Updated to strokeWidth for JSX syntax
             fill="none"
           />
